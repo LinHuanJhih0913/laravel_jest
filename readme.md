@@ -1,8 +1,6 @@
 Laravel + Jest - 自己 api 自己測
 ===
 
-[toc]
-
 ## 安裝 Laravel 專案
 
 ### clone 專案
