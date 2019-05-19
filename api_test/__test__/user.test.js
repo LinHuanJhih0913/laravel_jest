@@ -3,7 +3,7 @@
  */
 
 const axios = require('axios');
-const baseURI = 'http://laravel-test.test';
+const baseURI = 'http://127.0.0.1:8000';
 const {matchers} = require('jest-json-schema');
 
 expect.extend(matchers);
