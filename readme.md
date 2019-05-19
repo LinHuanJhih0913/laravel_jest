@@ -34,6 +34,9 @@ DB_PASSWORD=<database_user_password>
 ### 建立資料表，並且建立 seed
 `php artisan migrate --seed`
 
+### 執行應用程式
+`php artisan serve`
+
 ## 安裝 Jest
 
 ### 移至 api_test
@@ -58,6 +61,8 @@ Tests:       2 failed, 2 passed, 4 total
 Snapshots:   2 failed, 2 total
 Time:        0.764s, estimated 2s
 ```
-> 可以看到 snapshot 錯誤，schema 正確，原因是因為 `laravel_jest/api_test/__test__/__snapshots__/user.test.js.snap` 記錄著之前的 snapshot 而非現在的 snapshot，可以將它 rm 並重新 `npm test`
+> 可以看到 snapshot 錯誤，schema 正確
+> 原因是因為 `laravel_jest/api_test/__test__/__snapshots__/user.test.js.snap` 記錄著之前的 snapshot 而非現在的 snapshot
+> 可以將它 rm 並重新執行測試(`npm test`)來建立新的 snapshot
 
 > snapshot 要正確的話，必須要與 expect 一模一樣才會通過測試
