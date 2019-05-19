@@ -2,11 +2,17 @@
 
 namespace App\Exceptions;
 
+use App\Services\ResponseServices;
 use Exception;
+use Illuminate\Contracts\Container\Container;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Response;
 
 class Handler extends ExceptionHandler
 {
+    private $res;
+
     /**
      * A list of the exception types that are not reported.
      *
@@ -25,6 +31,12 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
+
+    public function __construct(Container $container, ResponseServices $responseServices)
+    {
+        parent::__construct($container);
+        $this->res = $responseServices;
+    }
 
     /**
      * Report or log an exception.
@@ -46,6 +58,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        // model binding error
+        if ($exception instanceof ModelNotFoundException) {
+            return $this->res->response(['msg' => 'error'], Response::HTTP_NOT_FOUND);
+        }
+
         return parent::render($request, $exception);
     }
 }
