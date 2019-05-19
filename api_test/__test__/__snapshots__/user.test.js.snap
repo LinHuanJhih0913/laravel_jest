@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetch api/users snapshot 1`] = `
+Array [
+  Object {
+    "created_at": "2019-05-18 09:19:28",
+    "email": "jacinto25@example.org",
+    "email_verified_at": "2019-05-18 09:19:28",
+    "id": 1,
+    "name": "Minnie Wiza",
+    "updated_at": "2019-05-18 09:19:28",
+  },
+  Object {
+    "created_at": "2019-05-18 09:19:37",
+    "email": "hortense56@example.net",
+    "email_verified_at": "2019-05-18 09:19:37",
+    "id": 2,
+    "name": "Mrs. Corene Bauch DVM",
+    "updated_at": "2019-05-18 09:19:37",
+  },
+  Object {
+    "created_at": "2019-05-18 09:19:40",
+    "email": "nelda.boyer@example.com",
+    "email_verified_at": "2019-05-18 09:19:40",
+    "id": 3,
+    "name": "Mr. Karl Bradtke",
+    "updated_at": "2019-05-18 09:19:40",
+  },
+]
+`;
+
+exports[`fetch api/users/1 snapshot 1`] = `
+Object {
+  "created_at": "2019-05-18 09:19:28",
+  "email": "jacinto25@example.org",
+  "email_verified_at": "2019-05-18 09:19:28",
+  "id": 1,
+  "name": "Minnie Wiza",
+  "updated_at": "2019-05-18 09:19:28",
+}
+`;
